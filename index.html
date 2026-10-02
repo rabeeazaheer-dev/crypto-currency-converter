@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CryptoCurrency Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Market Overview</p>
+          <h1>Live Crypto & Currency Exchange</h1>
+        </div>
+        <button id="refreshBtn" class="refresh-btn" type="button">
+          <span class="spinner" aria-hidden="true"></span>
+          <span class="btn-label">Refresh Data</span>
+        </button>
+      </header>
+
+      <section class="stats-grid">
+        <div class="stat-card accent-blue">
+          <span>Market Sentiment</span>
+          <strong id="marketSentiment">--</strong>
+        </div>
+        <div class="stat-card accent-green">
+          <span>Top Gainer</span>
+          <strong id="topGainer">--</strong>
+        </div>
+        <div class="stat-card accent-red">
+          <span>Top Loser</span>
+          <strong id="topLoser">--</strong>
+        </div>
+        <div class="stat-card accent-purple">
+          <span>Updated</span>
+          <strong id="lastUpdated">--</strong>
+        </div>
+      </section>
+
+      <main class="main-grid">
+        <section class="panel converter-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Converter</p>
+              <h2>Currency Exchange</h2>
+            </div>
+          </div>
+
+          <div class="converter-fields">
+            <label>
+              <span>Amount</span>
+              <input id="amountInput" type="number" value="1000" min="0" step="0.01" />
+            </label>
+
+            <div class="select-row">
+              <label>
+                <span>From</span>
+                <select id="fromCurrency"></select>
+              </label>
+
+              <button id="swapBtn" class="swap-btn" type="button" aria-label="Swap currencies">
+                ⇄
+              </button>
+
+              <label>
+                <span>To</span>
+                <select id="toCurrency"></select>
+              </label>
+            </div>
+          </div>
+
+          <div class="result-box">
+            <p>Converted Amount</p>
+            <h3 id="convertedAmount">--</h3>
+          </div>
+        </section>
+
+        <section class="panel market-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Browse</p>
+              <h2>Crypto Market</h2>
+            </div>
+          </div>
+
+          <div class="search-wrap">
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Search crypto or currency..."
+              aria-label="Search crypto or currency"
+            />
+          </div>
+
+          <div class="coin-grid" id="cryptoGrid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
